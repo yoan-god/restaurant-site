@@ -1,0 +1,439 @@
+/* =============================================
+   Paradise - Clean & Simple Design (Index + Contact)
+   Color Palette: #f0f0f0 (60% dominant)
+                  #111318 (30% secondaire)
+                  #ff740f (10% accent)
+   Règle 60/30/10 appliquée pour équilibre visuel
+   ============================================= */
+
+/* ---------- RESET & BASE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;   /* 60% Dominant : fond clair */
+    font-family: 'Segoe UI', Roboto, system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+    color: #111318;              /* couleur secondaire pour le texte principal */
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- TYPOGRAPHIE & LIENS ---------- */
+a {
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+/* ---------- HEADER & NAVIGATION (30% Secondaire) ---------- */
+.navbar, .nav-bar {
+    background-color: #111318;   /* 30% Secondaire : fond sombre */
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.navbar a, .nav-bar a {
+    color: #f0f0f0;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar a:hover, .nav-bar a:hover {
+    color: #ff740f;              /* 10% Accent au survol */
+}
+
+.navbar img {
+    height: 50px;
+    width: auto;
+    margin-left: auto;           /* pousse le logo à droite */
+    border-radius: 8px;
+    transition: transform 0.2s;
+    
+}
+
+.navbar img:hover {
+    transform: scale(1.02);
+}
+
+/* ---------- SECTION HERO (commune aux deux pages) ---------- */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #ffffff10, #f0f0f0);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #111318;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #ff740f;              /* accent pour sous-titre */
+    background: #1113180c;
+    display: inline-block;
+    padding: 0.3rem 1.2rem;
+    border-radius: 40px;
+    backdrop-filter: blur(2px);
+}
+
+/* ---------- MAIN (contenu principal) ---------- */
+main {
+    flex: 1;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    width: 100%;
+}
+
+/* ---------- STYLES SPÉCIFIQUES À LA PAGE CONTACT ---------- */
+/* Bloc d'informations de contact */
+.Contact {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+    text-align: center;
+}
+
+.Contact p {
+    font-size: 1.2rem;
+    margin: 0.8rem 0;
+    color: #111318;
+}
+
+.Contact p:first-child {
+    font-weight: 600;
+}
+
+.Contact p:last-child {
+    color: #ff740f;             /* accent pour l'email */
+}
+
+/* Formulaire de contact */
+.formulaire {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 2rem;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+}
+
+.formulaire h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #111318;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-left: 4px solid #ff740f;
+    padding-left: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+label {
+    font-weight: 600;
+    color: #111318;
+    margin-bottom: 0.2rem;
+    font-size: 0.95rem;
+}
+
+input, textarea {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 0.8rem 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ff740f;
+    box-shadow: 0 0 0 3px rgba(255, 116, 15, 0.2);
+    background-color: #ffffff;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Bouton (identique aux cartes produits) */
+.btn {
+    background-color: #ff740f;   /* couleur accent */
+    border: none;
+    color: #111318;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-align: center;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #e06610;
+    transform: scale(0.98);
+    color: #f0f0f0;
+}
+
+/* ---------- STYLES POUR LA PAGE D'ACCUEIL (produits) ---------- */
+.categories {
+    max-width: 1280px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Menu de catégories */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e2e2e2;
+    padding-bottom: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #111318;
+    padding: 0.3rem 0;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: #ff740f;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #ff740f;
+    transition: width 0.25s ease;
+    border-radius: 3px;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* Grilles produits */
+.burger, .Pizza, .Shawarma {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+}
+
+/* Cartes produits */
+.burger > section, .Pizza > section, .Shawarma > section {
+    background: #ffffff;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+    padding-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.burger > section:hover, .Pizza > section:hover, .Shawarma > section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Images produits */
+.burger img, .Pizza img, .Shawarma img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.burger > section:hover img, .Pizza > section:hover img, .Shawarma > section:hover img {
+    transform: scale(1.02);
+}
+
+/* Textes produits */
+.burger section p, .Pizza section p, .Shawarma section p {
+    padding: 0 1.2rem;
+    margin: 0.4rem 0;
+}
+
+.burger section p:first-of-type, 
+.Pizza section p:first-of-type, 
+.Shawarma section p:first-of-type {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111318;
+    margin-top: 1rem;
+}
+
+.burger section p:nth-of-type(2), 
+.Pizza section p:nth-of-type(2), 
+.Shawarma section p:nth-of-type(2) {
+    font-size: 0.9rem;
+    color: #3a3f4b;
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.burger section p:last-of-type, 
+.Pizza section p:last-of-type, 
+.Shawarma section p:last-of-type {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #ff740f;
+    margin-top: 0.6rem;
+    margin-bottom: 0.8rem;
+}
+
+/* Strong dans les cartes */
+.burger section strong p, 
+.Pizza section strong p, 
+.Shawarma section strong p {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #111318;
+    margin: 1rem 1.2rem 0.2rem;
+}
+
+/* ---------- FOOTER (30% Secondaire) ---------- */
+footer {
+    background-color: #111318;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer a {
+    color: #ff740f;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: rgba(255, 116, 15, 0.12);
+    padding: 0.6rem 1.8rem;
+    border-radius: 50px;
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+footer a:hover {
+    background-color: #ff740f;
+    color: #111318;
+    transform: translateY(-2px);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .navbar, .nav-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .navbar img {
+        margin-left: 0;
+        align-self: center;
+        height: 45px;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+    
+    .burger, .Pizza, .Shawarma {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+    
+    .menu {
+        gap: 1.2rem;
+    }
+    
+    .menu a {
+        font-size: 1.1rem;
+    }
+    
+    .categories, main {
+        padding: 0 1rem;
+    }
+    
+    .Contact, .formulaire {
+        padding: 1.5rem;
+    }
+    
+    .formulaire h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 2rem 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .burger img, .Pizza img, .Shawarma img {
+        height: 180px;
+    }
+    
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ---------- ACCESSIBILITÉ ---------- */
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #ff740f;
+    outline-offset: 2px;
+}
+
+/* Séparateurs entre catégories produits */
+.Pizza, .Shawarma {
+    margin-top: 1rem;
+    border-top: 1px solid #dddcdc;
+    padding-top: 2rem;
+}
